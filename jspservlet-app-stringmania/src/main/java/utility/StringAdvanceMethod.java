@@ -1,9 +1,10 @@
 package utility;
 
-public class StringBoolean {
-    private String input1;
-    private String input2;
-    public String getInput1() {
+public class StringAdvanceMethod {
+	//Enter the code here...
+	private String input1;
+	private String input2;
+	public String getInput1() {
 		return input1;
 	}
 	public void setInput1(String input1) {
@@ -15,24 +16,28 @@ public class StringBoolean {
 	public void setInput2(String input2) {
 		this.input2 = input2;
 	}
-     public boolean endsWith(String input1, String input2) {
-       
-        return input1.endsWith(input2);
-    }
+	public String concat(String one, String two){
+		return one.concat(two);
+	}
+	public String split(String one, String two){
+		int s = 0;
+		int e = one.indexOf(two);
+		String result = "";
 
-    public boolean startsWith(String input1, String input2) {
-        return input1.startsWith(input2);
-    }
+		while(e != -1){
+			String sub = one.substring(s,e);
+			result = result + sub + " ";
+			s = e + two.length();
+			e = one.indexOf(two, s);
+		}
+		String last = one.substring(s);
 
-    public boolean equals(String input1, String input2) {
-        return input1.equals(input2);
-    }
-
-    public boolean equalsIgnoreCase(String input1, String input2) {
-        return input1.equalsIgnoreCase(input2);
-    }
-
-    public boolean contains(String input1, String input2) {
-        return input1.contains(input2);
-    }
+		return result+last;
+	}
+	public String indexOf(String one, String two) {
+		return Integer.toString(one.indexOf(two));
+	}
+	public String trim(String str){
+		return str.trim();
+	}
 }
